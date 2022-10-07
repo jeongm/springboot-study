@@ -27,9 +27,17 @@ repositories {
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
+    //implementation('org.projectlombok:lombok') // lombok 의존성
     implementation('org.projectlombok:lombok')
+    testImplementation('org.projectlombok:lombok')
+    annotationProcessor('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
+
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')// Spring Data Jpa 추상화 라이브러리
+    implementation('com.h2database:h2:')// 인메모리 관계형 데이터베이스
+    // 별도의 설치없이 프로젝트 의존성만으로 관리할 수 있음
+    // h2: 메모리에서 실행되기 때문에 애플리케이션을 재시작할 때마다 초기화되므로 테스트 용도로 많이 사용됨
     testImplementation('org.springframework.boot:spring-boot-starter-test')
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
+
 }
 
